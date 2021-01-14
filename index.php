@@ -25,7 +25,7 @@
         echo "There are $req2 pokemons from the database"; 
 
         if($result){
-          
+
           echo "<tr>";
           echo "<th>Sprite </th>";
           echo "<th> ID </th>";
@@ -37,7 +37,6 @@
 
            // echo "SELECT a retourné". mysqli_num_rows($result)." lignes.<br>";
             while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
-
 
         echo "<tr>";
         echo "<td>";
@@ -64,8 +63,9 @@
         echo "" . $row["base_experience"] . "";
         echo "</td>";
         echo "</tr>";
+
         }
-        
+
 			mysqli_free_result($result);
 			
         }
