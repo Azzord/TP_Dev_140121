@@ -16,16 +16,20 @@
             echo "Erreur de débogage : " . mysqli_connect_error() . PHP_EOL;
             exit;
         }
-        echo "There are 151 pokemons from the database . <br>";
+
 
         $req = "SELECT * FROM  pokemon";
+        $req2 = "SELECT  COUNT(*) FROM pokemon";
         $result = mysqli_query($link,$req);
-		
+    
+        echo "There are $req2 pokemons from the database"; 
+
         if($result){
            // echo "SELECT a retourné". mysqli_num_rows($result)." lignes.<br>";
             while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+
         echo "<tr>";
-        echo "<th>Sprite</th>";
+        echo "<th>Sprite </th>";
         echo "<th> ID </th>";
         echo "<th> Name </th>";
         echo "<th> Height </th>";
@@ -58,8 +62,7 @@
         echo "</td>";
 
         }
-
-          
+        
 			mysqli_free_result($result);
 			
         }
