@@ -17,10 +17,10 @@
             exit;
         }
 
-
         $req = "SELECT * FROM  pokemon";
         $req2 = "SELECT  COUNT(*) FROM pokemon";
         $result = mysqli_query($link,$req);
+        $result2 = mysqli_query($link,$req2);
     
         echo "There are $req2 pokemons from the database"; 
 
@@ -35,8 +35,7 @@
           echo "<th>Base exp </th>";
           echo "</tr>";
 
-           // echo "SELECT a retourné". mysqli_num_rows($result)." lignes.<br>";
-            while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+          while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
 
         echo "<tr>";
         echo "<td>";
